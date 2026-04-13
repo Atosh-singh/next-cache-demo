@@ -24,11 +24,17 @@ jobs:
       - name: Build Next Js App
         run: npm run build
 
+      - name: Debug files
+        run: ls -la
+
+      
+
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: nextjs-build
           path: .next
+          if-no-files-found: warn
 
       - name: Debug files after build
         run: |
