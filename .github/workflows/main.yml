@@ -29,3 +29,10 @@ jobs:
         with:
           name: nextjs-build
           path: .next
+
+      - name: Debug files after build
+        run: |
+          echo "Current folder:"
+          pwd
+          echo "Files list:"
+          ls -la
